@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: contador
-          image: contador:1.0
+          image: contador:1.1
