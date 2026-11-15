@@ -95,4 +95,9 @@ Para solucionar este problema, se modifica el script añadiendo un bucle `while`
 
 ![Inicio de Kubernetes](img/07-kubernetes-nuevav.png)
 
-Con `rollout status` esperamos hasta los _pods_ nuevos sustituyan a los viejos
+Con `rollout status` esperamos hasta los _pods_ nuevos sustituyan a los viejos.
+
+Comprobamos de nuevo el Deployment con la solución propuesta, vemos `READY 3/3`, lo que significa que los tres _pods_ están funcionando correctamente y no presentan ningún reinicio. Al revisar los _logs_, podemos ver que cada uno de los _pods_ ha ejecutado el script de contador, contando 1 al 10 por separado.
+
+![Comprobación de Kubernetes](img/08-kubernetes-comprobacion.png)
+![Logs de Kubernetes](img/09-kubernetes-logs.png)
