@@ -28,4 +28,4 @@ print(i, flush=True)
 time.sleep(1)
 ```
 
-![Ejecución en local del script `contador.py`](image.png)
+![Ejecución en local del script `contador.py`](img/01-local-script.png)
