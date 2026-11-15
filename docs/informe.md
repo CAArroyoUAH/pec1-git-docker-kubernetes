@@ -56,3 +56,35 @@ Después, docker toma la imagen construida y crea un contenedor que es un proces
 Por último, podemos comprobar que la imagen existe y su tamaño.
 
 ![Imagen creada](img/04-dockerimage.png)
+
+## 3. Kubernetes
+
+Con Kubernetes podemos gestionar los contenedores de forma automática, ya que podemos decidir dónde se ejecuta, cuándo se reinician y mentener las copias o réplicas que indiquemos. En otras palabras, Kubernetes nos permite administrar los contenedores de forma conjunta.
+
+Lo primero es crear un clúster de Kubernetes de un solo nodo utilizando un contenedor de Docker con `minikube`, para posteriormente usar `kubectl` para enviar las intrucciones y controlar el clúster. Usamos de nuevo `minikube` para cargar la imagen nuevamente ya que utiliza su propio entorno de Docker.
+
+![Inicio de Kubernetes](img/05-kubernetesrun.png)
+
+Lo siguiente es el despliegue o _Deployment_ que es la forma de adminitrar varios _pods_ iguales (o la unidad más pequeña que se ejecuta con Kubernetes). En nuestro caso, tenemos un único contenedor con la imagen `contador`, indicamos tres réplicas pues es lo que nos pide el enunciado de la práctica. Por último, el `selector` y las `labels` sirven para que el Deployment pueda reconocer y gestionar los _pods_ que le pertenecen. El Deployment se hace mediante un fichero YAML que se aplica con nuestro comando `kubectl`.
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contador
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: contador
+  template:
+    metadata:
+      labels:
+        app: contador
+    spec:
+      containers:
+        - name: contador
+          image: contador:1.0
+```
+
+![Inicio de Kubernetes](img/06-kubernetes-crashloop.png)
