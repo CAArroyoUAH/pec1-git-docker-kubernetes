@@ -88,3 +88,5 @@ spec:
 ```
 
 ![Inicio de Kubernetes](img/06-kubernetes-crashloop.png)
+
+Con el comando -w veo cómo va cambiando el estado de los pods en tiempo real. Después de esperar unos segundos, se observa que los pods primero aparecen como `Running`, después pasan a `Completed` y finalmente terminan en estado `CrashLoopBackOff`. También se puede ver cómo aumenta el número de reinicios (RESTARTS).
