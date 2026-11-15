@@ -1,6 +1,8 @@
 # PEC1: Git, Docker y Kubernetes
 
-Autor: Carlos Álvaro Arroyo Parejo
+Autor: _Carlos Álvaro Arroyo Parejo_
+
+Fecha: _16 de noviembre de 2026_
 
 Repositorio: https://github.com/CAArroyoUAH/pec1-git-docker-kubernetes 
 
@@ -100,4 +102,5 @@ Con `rollout status` esperamos hasta los _pods_ nuevos sustituyan a los viejos.
 Comprobamos de nuevo el Deployment con la solución propuesta, vemos `READY 3/3`, lo que significa que los tres _pods_ están funcionando correctamente y no presentan ningún reinicio. Al revisar los _logs_, podemos ver que cada uno de los _pods_ ha ejecutado el script de contador, contando 1 al 10 por separado.
 
 ![Comprobación de Kubernetes](img/08-kubernetes-comprobacion.png)
+
 ![Logs de Kubernetes](img/09-kubernetes-logs.png)

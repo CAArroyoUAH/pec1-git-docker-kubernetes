@@ -24,3 +24,25 @@ La PEC tendrá un peso del 30% sobre la nota, teniendo el primer enunciado el va
 La entrega debe ser en formato PDF con capturas de cada uno de los pasos y el link al repositorio (el repo debe ser público para que lo pueda visualizar).
 
 ---
+
+# Utilización de este repositorio
+
+Script Python que cuenta del 1 al 10, empaquetado en Docker y desplegado en Kubernetes con 3 réplicas. Ejecución local
+
+```bash
+python3 contador.py
+```
+Docker
+
+```bash
+docker build -t contador:1.1 .
+docker run --rm contador:1.1
+```
+Kubernetes (minikube)
+
+```bash
+minikube start
+minikube image load contador:1.1
+kubectl apply -f k8s/deployment.yaml
+kubectl get pods
+```
