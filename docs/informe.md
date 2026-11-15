@@ -29,3 +29,30 @@ time.sleep(1)
 ```
 
 ![Ejecución en local del script `contador.py`](img/01-local-script.png)
+
+## 2. Docker
+
+Se crea el Dockerfile que contiene la siguiente información:
+* `FROM`: es la imagen de la versión de Python usada, en mi caso 3.12 en versión reducida.
+* `WORKDIR`: directorio de trabajo dentro del contenedor. 
+* `COPY`: copia nuestro script `contador.py`dentro de la imagen de Docker.
+* `CMD`: comando que se ejecuta al iniciar el contenedor.
+
+```docker
+FROM python:3.12-slim
+WORKDIR /app
+COPY contador.py .
+CMD ["python", "contador.py"]
+```
+
+Lo siguiente es construir la imagen. Docker lee la información anterior y crea la imagen que no es más que un "paquete" de lo anterior.
+
+![Construcción de la imagen](img/02-dockerbuild.png)
+
+Después, docker toma la imagen construida y crea un contenedor que es un proceso aislado que arranca partiendo de la imagen. Aquí si se ejecuta el `CDM` de nuestro Dockerfile y, por eso, aparecen los números de `contador.py`.
+
+![Ejecución del contenedor](img/03-dockerrun.png)
+
+Por último, podemos comprobar que la imagen existe y su tamaño.
+
+![Imagen creada](img/04-dockerimage.png)
