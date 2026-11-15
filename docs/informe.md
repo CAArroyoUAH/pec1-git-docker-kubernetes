@@ -89,4 +89,10 @@ spec:
 
 ![Inicio de Kubernetes](img/06-kubernetes-crashloop.png)
 
-Con el comando -w veo cómo va cambiando el estado de los pods en tiempo real. Después de esperar unos segundos, se observa que los pods primero aparecen como `Running`, después pasan a `Completed` y finalmente terminan en estado `CrashLoopBackOff`. También se puede ver cómo aumenta el número de reinicios (RESTARTS).
+Con el comando `-w` veo cómo va cambiando el estado de los pods en tiempo real. Después de esperar unos segundos, se observa que los pods primero aparecen como `Running`, después pasan a `Completed` y finalmente terminan en estado `CrashLoopBackOff`. También se puede ver cómo aumenta el número de reinicios (RESTARTS).
+
+Para solucionar este problema, se modifica el script añadiendo un bucle `while` para esperar al terminar de contar. Así, evitamos que el contenedor se cierre, evitando que Kubernetes tenga que reiniciarlo constantemente. Como hemos añadido una nueva «versión» pues construimos una nueva imagen como buenas prácticas. 
+
+![Inicio de Kubernetes](img/07-kubernetes-nuevav.png)
+
+Con `rollout status` esperamos hasta los _pods_ nuevos sustituyan a los viejos
