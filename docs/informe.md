@@ -88,7 +88,10 @@ spec:
       containers:
         - name: contador
           image: contador:1.0
+          imagePullPolicy: IfNotPresent
 ```
+
+Se añade `imagePullPolicy: IfNotPresent` para que use la imagen local y no la de Docker Hub.
 
 ![Inicio de Kubernetes](img/06-kubernetes-crashloop.png)
 
