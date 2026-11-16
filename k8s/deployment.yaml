@@ -16,3 +16,10 @@ spec:
         - name: contador
           image: contador:1.1
           imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: "10m"
+              memory: "32Mi"
+            limits:
+              cpu: "100m"
+              memory: "64Mi"
