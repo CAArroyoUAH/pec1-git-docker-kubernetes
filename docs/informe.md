@@ -115,3 +115,9 @@ Comprobamos de nuevo el Deployment con la solución propuesta, vemos `READY 3/3`
 ![Comprobación de Kubernetes](img/08-kubernetes-comprobacion.png)
 
 ![Logs de Kubernetes](img/09-kubernetes-logs.png)
+
+## 4. Historial de _commits_
+
+Se ha ejecutado `git log --oneline` para mostrar el historial de _commits_. Únicamente faltará el de la actualización última que no saldrá.
+
+![Logs de Git](img/10-gitlog.png)
