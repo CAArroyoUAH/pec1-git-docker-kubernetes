@@ -35,6 +35,7 @@ time.sleep(1)
 ## 2. Docker
 
 Se crea el Dockerfile que contiene la siguiente información:
+
 * `FROM`: es la imagen de la versión de Python usada, en mi caso 3.12 en versión reducida.
 * `WORKDIR`: directorio de trabajo dentro del contenedor. 
 * `COPY`: copia nuestro script `contador.py`dentro de la imagen de Docker.
