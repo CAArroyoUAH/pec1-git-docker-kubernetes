@@ -89,9 +89,16 @@ spec:
         - name: contador
           image: contador:1.0
           imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: "10m"
+              memory: "32Mi"
+            limits:
+              cpu: "100m"
+              memory: "64Mi"
 ```
 
-Se añade `imagePullPolicy: IfNotPresent` para que use la imagen local y no la de Docker Hub.
+Se añade `imagePullPolicy: IfNotPresent` para que use la imagen local y no la de Docker Hub. Se añade también `resources` para indicar límites de uso de la CPU y la memoria al contenedor, simplemente por buenas prácticas.
 
 ![Inicio de Kubernetes](img/06-kubernetes-crashloop.png)
 
